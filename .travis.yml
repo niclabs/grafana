@@ -11,14 +11,6 @@ before_install:
   - npm install -g grunt-cli
   - gem install fpm
 script:
-  - cd ../../ && mv fdns grafana && cd grafana/grafana
+  - cd ../../ && mv niclabs grafana && cd grafana/grafana
   - go run build.go build package
-  - cd ../../ && mv grafana fdns && cd fdns/grafana
-deploy:
-  provider: releases
-  api_key: $GH_TOKEN
-  file_glob: true
-  file: dist/*
-  skip_cleanup: true
-  on:
-    tags: true
+  - cd ../../ && mv grafana niclabs && cd niclabs/grafana

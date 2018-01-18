@@ -27,6 +27,7 @@ import (
 	_ "github.com/grafana/grafana/pkg/tsdb/opentsdb"
 	_ "github.com/grafana/grafana/pkg/tsdb/prometheus"
 	_ "github.com/grafana/grafana/pkg/tsdb/testdata"
+        _ "github.com/grafana/grafana/pkg/tsdb/clickhouse"
 )
 
 var version = "4.1.0"

@@ -14,3 +14,11 @@ script:
   - cd ../../ && mv niclabs grafana && cd grafana/grafana
   - go run build.go build package
   - cd ../../ && mv grafana niclabs && cd niclabs/grafana
+deploy:
+  provider: releases
+  api_key: $GITHUB_TOKEN
+  file_glob: true
+  file: dist/*
+  skip_cleanup: true
+  on:
+    tags: true
